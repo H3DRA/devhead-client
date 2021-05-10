@@ -15,3 +15,13 @@ export const createPost = (post, user) => {
     }
   })
 }
+
+export const indexPosts = user => {
+  return axios({
+    method: 'GET',
+    url: apiUrl + '/posts',
+    headers: {
+      'Authorization': `Bearer ${user.token}`
+    }
+  })
+}
