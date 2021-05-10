@@ -33,17 +33,20 @@ export const signOut = user => {
     url: apiUrl + '/sign-out',
     method: 'DELETE',
     headers: {
-      'Authorization': `Token token=${user.token}`
+      'Authorization': `Bearer ${user.token}`
     }
   })
 }
 
 export const changePassword = (passwords, user) => {
+  console.log(typeof passwords.oldPassword)
+  console.log(typeof passwords.newPassword)
+  console.log(typeof user.token)
   return axios({
     url: apiUrl + '/change-password',
     method: 'PATCH',
     headers: {
-      'Authorization': `Token token=${user.token}`
+      'Authorization': `Bearer ${user.token}`
     },
     data: {
       passwords: {
