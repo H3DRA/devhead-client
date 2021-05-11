@@ -34,7 +34,7 @@ class IndexPosts extends Component {
       }))
   }
 
-  showEditForm = (event) => {
+  showEditForm = event => {
     event.preventDefault()
     this.setState({
       formDisplay: true,
@@ -46,7 +46,7 @@ class IndexPosts extends Component {
     [event.target.name]: event.target.value
   })
 
-  postUpdate = (event) => {
+  postUpdate = event => {
     event.preventDefault()
     const { formBody, formId } = this.state
     const { user, msgAlert, history } = this.props
@@ -69,7 +69,7 @@ class IndexPosts extends Component {
       }))
   }
 
-  postDelete = (event) => {
+  postDelete = event => {
     const id = event.target.getAttribute('data-id')
     const { user, msgAlert, history } = this.props
     deletePost(user, id)
