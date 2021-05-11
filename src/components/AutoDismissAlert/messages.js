@@ -20,5 +20,4 @@ export default {
   indexUsersFailure: 'Failed to display all users',
   indexUserPostsSuccess: 'You are now viewing all posts by a user!',
   indexUserPostsFailure: 'Failed to display all posts by this user'
-
 }
