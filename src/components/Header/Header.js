@@ -9,6 +9,7 @@ const authenticatedOptions = (
     <Nav.Link href="#create-post">Create Post</Nav.Link>
     <Nav.Link href="#index-posts">Index Posts</Nav.Link>
     <Nav.Link href="#index-posts-all">Index All Posts</Nav.Link>
+    <Nav.Link href="#index-users">Index Users</Nav.Link>
   </Fragment>
 )
 

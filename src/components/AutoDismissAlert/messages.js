@@ -15,6 +15,8 @@ export default {
   indexPostSuccess: 'Posts indexed successfully',
   indexPostFailure: 'Post failed to display.',
   indexAllSuccess: 'You are now viewing all posts!',
-  indexAllFailure: 'Failed to display all posts'
+  indexAllFailure: 'Failed to display all posts',
+  indexUsersSuccess: 'You are now viewing all users!',
+  indexUsersFailure: 'Failed to display all users'
 
 }
