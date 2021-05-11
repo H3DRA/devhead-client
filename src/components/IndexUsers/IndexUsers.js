@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { indexUsers } from '../../api/users'
+import { indexAllPosts } from '../../api/posts'
 import messages from '../AutoDismissAlert/messages'
 
 class IndexUsers extends Component {
@@ -7,7 +8,8 @@ class IndexUsers extends Component {
     super(props)
 
     this.state = {
-      users: null
+      users: null,
+      posts: null
     }
   }
 
@@ -28,8 +30,30 @@ class IndexUsers extends Component {
       }))
   }
 
+  indexUserPosts = event => {
+    event.preventDefault()
+    const { user, msgAlert } = this.props
+    const id = event.target.getAttribute('data-id')
+
+    indexAllPosts(user)
+      .then(res => {
+        const userPosts = res.data.posts.filter(post => post.owner === id)
+        this.setState({ posts: userPosts })
+      })
+      .then(() => msgAlert({
+        heading: 'Successfully indexed user post',
+        message: messages.indexUserPostSuccess,
+        variant: 'success'
+      }))
+      .catch(error => msgAlert({
+        heading: 'User post indexing failed ' + error.message,
+        message: messages.indexUserPostFailure,
+        variant: 'danger'
+      }))
+  }
+
   render () {
-    const { users } = this.state
+    const { users, posts } = this.state
 
     let usersJsx = ''
 
@@ -37,12 +61,26 @@ class IndexUsers extends Component {
       usersJsx = (
         <p>Loading...</p>
       )
+    } else if (posts) {
+      usersJsx = (
+        <ul>
+          {posts.map(post => (
+            <li key={post._id}>
+              {post.body}
+            </li>
+          ))}
+        </ul>
+      )
     } else {
       usersJsx = (
         <ul>
           {users.map(user => (
             <li key={user._id}>
-              {user.email}
+              <a
+                href="#"
+                data-id={user._id}
+                onClick={this.indexUserPosts}
+              >{user.email}</a>
             </li>
           ))}
         </ul>
