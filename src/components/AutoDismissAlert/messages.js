@@ -13,5 +13,8 @@ export default {
   updatePostSuccess: 'Post updated successfully!',
   updatePostFailure: 'Post update failed.',
   indexPostSuccess: 'Posts indexed successfully',
-  indexPostFailure: 'Post failed to display.'
+  indexPostFailure: 'Post failed to display.',
+  indexAllSuccess: 'You are now viewing all posts!',
+  indexAllFailure: 'Failed to display all posts'
+
 }
