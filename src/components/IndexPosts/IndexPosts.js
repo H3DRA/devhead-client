@@ -5,6 +5,10 @@ import messages from '../AutoDismissAlert/messages'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 
+const homeStyles = {
+  background: 'linear-gradient(270deg, rgba(255,119,215,1) 50%, rgba(255,218,0,1) 100%)'
+}
+
 class IndexPosts extends Component {
   constructor (props) {
     super(props)
@@ -34,7 +38,7 @@ class IndexPosts extends Component {
       }))
   }
 
-  showEditForm = event => {
+  showEditForm = (event) => {
     event.preventDefault()
     this.setState({
       formDisplay: true,
@@ -46,7 +50,7 @@ class IndexPosts extends Component {
     [event.target.name]: event.target.value
   })
 
-  postUpdate = event => {
+  postUpdate = (event) => {
     event.preventDefault()
     const { formBody, formId } = this.state
     const { user, msgAlert, history } = this.props
@@ -69,7 +73,7 @@ class IndexPosts extends Component {
       }))
   }
 
-  postDelete = event => {
+  postDelete = (event) => {
     const id = event.target.getAttribute('data-id')
     const { user, msgAlert, history } = this.props
     deletePost(user, id)
@@ -152,7 +156,7 @@ class IndexPosts extends Component {
     }
 
     return (
-      <div className="row">
+      <div className="row " style={homeStyles}>
         <div className="col-sm-10 col-md-8 mx-auto mt-5">
           <h3>Your Wall</h3>
           {postsJsx}
