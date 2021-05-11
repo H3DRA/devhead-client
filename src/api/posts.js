@@ -25,3 +25,28 @@ export const indexPosts = user => {
     }
   })
 }
+
+export const deletePost = (user, id) => {
+  return axios({
+    method: 'DELETE',
+    url: apiUrl + '/posts/' + id,
+    headers: {
+      'Authorization': `Bearer ${user.token}`
+    }
+  })
+}
+
+export const updatePost = (user, id, body) => {
+  return axios({
+    method: 'PATCH',
+    url: apiUrl + '/posts/' + id,
+    headers: {
+      'Authorization': `Bearer ${user.token}`
+    },
+    data: {
+      post: {
+        body: body
+      }
+    }
+  })
+}

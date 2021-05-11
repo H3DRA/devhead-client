@@ -7,5 +7,11 @@ export default {
   changePasswordSuccess: 'Password changed successfully!',
   changePasswordFailure: 'Failed to change passwords. Check your old password and try again.',
   createPostSuccess: 'Create Post Successful!',
-  createPostFailure: 'Create Post Failed'
+  createPostFailure: 'Create Post Failed',
+  deletePostSuccess: 'Post deleted Successfully!',
+  deletePostFailure: 'Post delete failed.',
+  updatePostSuccess: 'Post updated successfully!',
+  updatePostFailure: 'Post update failed.',
+  indexPostSuccess: 'Posts indexed successfully',
+  indexPostFailure: 'Post failed to display.'
 }
