@@ -16,7 +16,7 @@ export const createPost = (post, user) => {
   })
 }
 
-export const indexPosts = user => {
+export const indexPosts = (user) => {
   return axios({
     method: 'GET',
     url: apiUrl + '/posts',
@@ -30,6 +30,16 @@ export const deletePost = (user, id) => {
   return axios({
     method: 'DELETE',
     url: apiUrl + '/posts/' + id,
+    headers: {
+      'Authorization': `Bearer ${user.token}`
+    }
+  })
+}
+
+export const indexAllPosts = user => {
+  return axios({
+    method: 'GET',
+    url: apiUrl + '/posts/all',
     headers: {
       'Authorization': `Bearer ${user.token}`
     }
