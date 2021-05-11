@@ -17,6 +17,8 @@ export default {
   indexAllSuccess: 'You are now viewing all posts!',
   indexAllFailure: 'Failed to display all posts',
   indexUsersSuccess: 'You are now viewing all users!',
-  indexUsersFailure: 'Failed to display all users'
+  indexUsersFailure: 'Failed to display all users',
+  indexUserPostsSuccess: 'You are now viewing all posts by a user!',
+  indexUserPostsFailure: 'Failed to display all posts by this user'
 
 }
