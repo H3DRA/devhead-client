@@ -44,26 +44,27 @@ class CreatePost extends Component {
     const { body } = this.state
 
     return (
-      <div className="row">
+      <div className="row form">
         <div className="col-sm-10 col-md-8 mx-auto mt-5">
-          <h3>Create Post</h3>
+          <h3>createPost</h3>
           <Form onSubmit={this.onCreatePost}>
             <Form.Group controlId="body">
-              <Form.Label>Post Body</Form.Label>
               <Form.Control
                 required
+                className="field"
                 type="text"
                 name="body"
                 value={body}
-                placeholder="Post your thoughts!"
+                placeholder="postYourThoughts!"
                 onChange={this.handleChange}
               />
             </Form.Group>
             <Button
+              className="button"
               variant="primary"
               type="submit"
             >
-              Post
+              rost
             </Button>
           </Form>
         </div>

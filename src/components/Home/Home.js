@@ -1,10 +1,26 @@
-import React, { Component } from 'react'
+import React, { Fragment } from 'react'
+import { Link } from 'react-router-dom'
 import '../../CSS/Home.scss'
 
-class Home extends Component {
-  render () {
-    return (<h1 className="welcome">Welcome to devHead</h1>)
-  }
-}
+const unauthenticatedOptions = (
+  <div>
+    <h1 className="welcome">devHead</h1>
+  </div>
+)
+
+const authenticatedOptions = (
+  <div className="ml-auto authnav">
+    <Link to="/create-post" className="authnavlinks" style={{ textDecoration: 'none' }}>post</Link>
+    <Link to="/index-posts" className="authnavlinks" style={{ textDecoration: 'none' }}>myPosts</Link>
+    <Link to="/index-posts-all" className="authnavlinks" style={{ textDecoration: 'none' }}>devFeed</Link>
+    <Link to="/index-users" className="authnavlinks" style={{ textDecoration: 'none' }}>devHeads</Link>
+  </div>
+)
+
+const Home = ({ user }) => (
+  <Fragment>
+    { user ? authenticatedOptions : unauthenticatedOptions }
+  </Fragment>
+)
 
 export default Home

@@ -27,8 +27,8 @@ $secondary: yellow;
 }
 
 .logo {
-    font-family: 'Recursive', sans-serif;
-    font-size: 5vh;
+  font-family: 'Recursive', sans-serif;
+  font-size: 5vw;
 }
 
 .navbar {
@@ -38,7 +38,13 @@ $secondary: yellow;
 
 .authnav {
   font-family: 'Roboto Mono', monospace;
-  font-size: 1vw;
+  font-size: 2vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.authnavlinks {
+  color: white;
 }
 
 .welcome {
@@ -46,6 +52,6 @@ $secondary: yellow;
   font-size: 5vh;
   color: white;
   margin: auto;
-  width: 50%;
+  width: 25%;
   padding-top: 275px;
 }
