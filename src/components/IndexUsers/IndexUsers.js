@@ -58,7 +58,7 @@ class IndexUsers extends Component {
       )
     } else if (posts) {
       usersJsx = (
-        <ul>
+        <ul className="feedbox">
           {posts.map(post => (
             <li key={post._id}>
               {post.body}

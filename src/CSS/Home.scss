@@ -26,6 +26,12 @@ $secondary: yellow;
   border: none;
 }
 
+.feedbox {
+  border: dotted white 5px;
+  padding: 50%;
+  list-style-type: none;
+}
+
 .logo {
   font-family: 'Recursive', sans-serif;
   font-size: 5vw;
