@@ -1,6 +1,9 @@
 @import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Girassol&family=Roboto+Mono:wght@400&display=swap');
 
 body {
   background: rgb(255,119,215);
   background: linear-gradient(270deg, rgba(255,119,215,1) 50%, rgba(255,218,0,1) 100%);
+  font-family: 'Girassol', cursive;
+  font-family: 'Roboto Mono', monospace;
 }

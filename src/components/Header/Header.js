@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
+import '../../CSS/Home.scss'
 
 const authenticatedOptions = (
   <Fragment>
@@ -27,9 +28,9 @@ const alwaysOptions = (
 )
 
 const Header = ({ user }) => (
-  <Navbar bg="transparent" variant="dark" expand="md">
-    <Navbar.Brand href="#">
-      devHead
+  <Navbar bg="transparent" variant="dark" expand="md" className="home navbar">
+    <Navbar.Brand href="#" className="logo">
+      {'{dH}'}
     </Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">

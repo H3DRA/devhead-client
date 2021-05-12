@@ -1,0 +1,51 @@
+$primary: rgba(0, 255, 177, .7);
+$secondary: yellow;
+
+@import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Recursive:wght@500&family=Roboto+Mono:wght@300&display=swap');
+
+.home {
+  background: rgb(255,119,215);
+  background: linear-gradient(270deg, rgba(255,119,215,1) 50%, rgba(255,218,0,1) 100%);
+  font-family: 'Roboto Mono', monospace;
+}
+
+.form {
+  font-family: 'Roboto Mono', monospace;
+  color: white;
+}
+
+.field {
+  border: none;
+  background: transparent;
+  border-bottom: 3px dashed white;
+  color: white;
+}
+
+.button {
+  border: none;
+}
+
+.logo {
+    font-family: 'Recursive', sans-serif;
+    font-size: 5vh;
+}
+
+.navbar {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 2vw;
+}
+
+.authnav {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1vw;
+}
+
+.welcome {
+  font-family: 'Recursive', sans-serif;
+  font-size: 5vh;
+  color: white;
+  margin: auto;
+  width: 50%;
+  padding-top: 275px;
+}

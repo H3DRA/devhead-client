@@ -48,7 +48,7 @@ class SignIn extends Component {
     const { email, password } = this.state
 
     return (
-      <div className="row">
+      <div className="row form">
         <div className="col-sm-10 col-md-8 mx-auto mt-5">
           <h3>Sign In</h3>
           <Form onSubmit={this.onSignIn}>
@@ -56,6 +56,7 @@ class SignIn extends Component {
               <Form.Label>Email address</Form.Label>
               <Form.Control
                 required
+                className="field"
                 type="email"
                 name="email"
                 value={email}
@@ -67,6 +68,7 @@ class SignIn extends Component {
               <Form.Label>Password</Form.Label>
               <Form.Control
                 required
+                className="field"
                 name="password"
                 value={password}
                 type="password"
@@ -75,6 +77,7 @@ class SignIn extends Component {
               />
             </Form.Group>
             <Button
+              className="button"
               variant="primary"
               type="submit"
             >

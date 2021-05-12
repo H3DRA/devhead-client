@@ -5,10 +5,6 @@ import messages from '../AutoDismissAlert/messages'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 
-const homeStyles = {
-  background: 'linear-gradient(270deg, rgba(255,119,215,1) 50%, rgba(255,218,0,1) 100%)'
-}
-
 class IndexPosts extends Component {
   constructor (props) {
     super(props)
@@ -156,7 +152,7 @@ class IndexPosts extends Component {
     }
 
     return (
-      <div className="row " style={homeStyles}>
+      <div className="row ">
         <div className="col-sm-10 col-md-8 mx-auto mt-5">
           <h3>Your Wall</h3>
           {postsJsx}
