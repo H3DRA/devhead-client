@@ -88,7 +88,7 @@ class SignIn extends Component {
           </Form>
           <br/>
           <p>Need to sign up? Click to <span>
-            <Link to="/sign-up"
+            <Link to="/"
               className="authnavlinks authnavlinks:hover"
               style={{ textDecoration: 'none' }}>
               create an account</Link>

@@ -14,7 +14,6 @@ import CreatePost from './components/CreatePost/CreatePost'
 import IndexPosts from './components/IndexPosts/IndexPosts'
 import IndexAllPosts from './components/IndexAllPosts/IndexAllPosts'
 import IndexUsers from './components/IndexUsers/IndexUsers'
-import Home from './components/Home/Home'
 
 class App extends Component {
   constructor (props) {
@@ -60,12 +59,9 @@ class App extends Component {
         ))}
         <main className="container">
           <Route exact path='/' render={() => (
-            <Home user={user} />
-          )} />
-          <Route path='/sign-up' render={() => (
             <SignUp msgAlert={this.msgAlert} setUser={this.setUser} />
           )} />
-          <Route path='/sign-in' render={() => (
+          <Route exact path='/sign-in' render={() => (
             <SignIn msgAlert={this.msgAlert} setUser={this.setUser} />
           )} />
           <AuthenticatedRoute user={user} path='/sign-out' render={() => (
