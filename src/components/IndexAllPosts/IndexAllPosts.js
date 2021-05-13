@@ -55,6 +55,11 @@ class IndexAllPosts extends Component {
                 {post.ownerEmail}
               </h5>
               {post.body}
+              <div className="timestamp">
+                {(new Date(post.createdAt)).toDateString()}
+                <span> </span>
+                {(new Date(post.createdAt)).toLocaleString('en-US', { hour: 'numeric', hour12: true, minute: 'numeric' })}
+              </div>
             </li>
           ))}
         </ul>

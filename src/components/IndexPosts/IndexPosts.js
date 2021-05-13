@@ -140,7 +140,11 @@ class IndexPosts extends Component {
           {posts.slice(0).reverse().map(post => (
             <li key={post._id} className="linebetween">
               {post.body}
-              <br />
+              <div className="timestamp">
+                {(new Date(post.createdAt)).toDateString()}
+                <span> </span>
+                {(new Date(post.createdAt)).toLocaleString('en-US', { hour: 'numeric', hour12: true, minute: 'numeric' })}
+              </div>
               <Button
                 variant="primary"
                 className="button"
