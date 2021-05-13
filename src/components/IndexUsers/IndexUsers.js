@@ -3,7 +3,7 @@ import { indexUsers } from '../../api/users'
 import { indexAllPosts } from '../../api/posts'
 import messages from '../AutoDismissAlert/messages'
 import Button from 'react-bootstrap/Button'
-import { withRouter, Link } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 class IndexUsers extends Component {
   constructor (props) {
     super(props)
@@ -53,14 +53,6 @@ class IndexUsers extends Component {
       }))
   }
   render () {
-    const authenticatedOptions = (
-      <div className="ml-auto authnav" expand="md">
-        <Link to="/create-post" className="authnavlinks" style={{ textDecoration: 'none', padding: '2%' }}>post</Link>
-        <Link to="/index-posts" className="authnavlinks" style={{ textDecoration: 'none', padding: '2%' }}>myPosts</Link>
-        <Link to="/index-posts-all" className="authnavlinks" style={{ textDecoration: 'none', padding: '2%' }}>devFeed</Link>
-        <Link to="/index-users" className="authnavlinks" style={{ textDecoration: 'none', padding: '2%' }}>devHeads</Link>
-      </div>
-    )
     const { users, posts } = this.state
     let usersJsx = ''
     if (users === null) {
@@ -68,41 +60,59 @@ class IndexUsers extends Component {
         <p className="form">Loading...</p>
       )
     } else if (posts) {
-      usersJsx = (
-        <ul className="list">
-          {posts.map(post => (
-            <li key={post._id} className="linebetween">
-              {post.body}
-            </li>
-          ))}
-          <Button
-            variant="secondary"
-            className="button"
-            type="button"
-            onClick={this.goBack}
-          >Go Back</Button>
-        </ul>
-      )
+      if (posts.length === 0) {
+        usersJsx = (
+          <div>
+            <p className="ptitles">This user`s wall is empty</p>
+            <Button
+              variant="secondary"
+              className="button"
+              type="button"
+              onClick={this.goBack}
+            >Go Back</Button>
+          </div>
+        )
+      } else {
+        usersJsx = (
+          <div>
+            <p className="ptitles">{posts[0].ownerEmail}`s wall</p>
+            <ul className="list">
+              {posts.map(post => (
+                <li key={post._id} className="linebetween">
+                  {post.body}
+                </li>
+              ))}
+              <Button
+                variant="secondary"
+                className="button"
+                type="button"
+                onClick={this.goBack}
+              >Go Back</Button>
+            </ul>
+          </div>
+        )
+      }
     } else {
       usersJsx = (
-        <ul className="list">
-          {users.map(user => (
-            <li key={user._id} className="linebetween">
-              <a
-                href="#"
-                data-id={user._id}
-                onClick={this.indexUserPosts}
-              >{user.email}</a>
-            </li>
-          ))}
-        </ul>
+        <div>
+          <p className="ptitles">moreDevs</p>
+          <ul className="list">
+            {users.map(user => (
+              <li key={user._id} className="linebetween">
+                <a
+                  href="#"
+                  data-id={user._id}
+                  onClick={this.indexUserPosts}
+                >{user.email}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
       )
     }
     return (
       <div className="row">
-        {authenticatedOptions}
         <div className="col-sm-10 col-md-8 mx-auto mt-5 feedbox">
-          <p className="ptitles">moreDevs</p>
           {usersJsx}
         </div>
       </div>
