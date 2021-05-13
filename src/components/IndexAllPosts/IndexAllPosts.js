@@ -49,7 +49,7 @@ class IndexAllPosts extends Component {
     } else {
       postsJsx = (
         <ul className="list">
-          {posts.map(post => (
+          {posts.slice(0).reverse().map(post => (
             <li key={post._id} className="linebetween">
               <h5 className="userhead">
                 {post.ownerEmail}

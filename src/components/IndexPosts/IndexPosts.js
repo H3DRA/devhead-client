@@ -137,7 +137,7 @@ class IndexPosts extends Component {
     } else {
       postsJsx = (
         <ul className="list">
-          {posts.map(post => (
+          {posts.slice(0).reverse().map(post => (
             <li key={post._id} className="linebetween">
               {post.body}
               <br />
