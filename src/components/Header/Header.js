@@ -37,8 +37,8 @@ const unauthenticatedOptions = (
 // )
 
 const Header = ({ user }) => (
-  <Navbar bg="transparent" variant="dark" expand="md" className="home navbar">
-    <Navbar.Brand href="#index-posts-all" className="logo">
+  <Navbar bg="transparent" variant="dark" expand="lg" className="home navbar">
+    <Navbar.Brand href="#index-posts-all" className="logo glow-logo">
       {'{dH}'}
       <p className="logo-subhead">devHead</p>
     </Navbar.Brand>
