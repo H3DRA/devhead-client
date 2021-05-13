@@ -9,6 +9,10 @@
   position: fixed;
   right: 0;
   z-index: 10000;
+  opacity: 100;
+  font-family: 'Roboto Mono', monospace;
+  color: white;
+  border: dashed 3px white;
 
   .alert-body {
     margin-bottom: 0;

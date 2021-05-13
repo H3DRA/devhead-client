@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { indexAllPosts } from '../../api/posts'
 import messages from '../AutoDismissAlert/messages'
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 
 // similar to IndexPosts(user) except it'll show any post created by any user
 class IndexAllPosts extends Component {
@@ -59,6 +59,9 @@ class IndexAllPosts extends Component {
         <ul className="list">
           {posts.map(post => (
             <li key={post._id} className="linebetween">
+              <h5 className="userhead">
+                {post.ownerEmail}
+              </h5>
               {post.body}
             </li>
           ))}
@@ -78,4 +81,4 @@ class IndexAllPosts extends Component {
   }
 }
 
-export default IndexAllPosts
+export default withRouter(IndexAllPosts)

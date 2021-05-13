@@ -27,9 +27,11 @@ class IndexUsers extends Component {
         variant: 'danger'
       }))
   }
+
   goBack = event => {
     this.setState({ posts: null })
   }
+
   indexUserPosts = event => {
     event.preventDefault()
     const { user, msgAlert } = this.props
