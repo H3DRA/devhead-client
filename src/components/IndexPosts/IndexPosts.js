@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { indexPosts, deletePost, updatePost } from '../../api/posts'
-import { withRouter, Link } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 import messages from '../AutoDismissAlert/messages'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
@@ -22,16 +22,16 @@ class IndexPosts extends Component {
 
     indexPosts(user)
       .then(res => this.setState({ posts: res.data.posts }))
-      .then(() => msgAlert({
-        heading: 'Successfully indexed post',
-        message: messages.indexPostSuccess,
-        variant: 'success'
-      }))
       .catch(error => msgAlert({
         heading: 'Post indexing failed ' + error.message,
         message: messages.indexPostFailure,
         variant: 'danger'
       }))
+      // .then(() => msgAlert({
+      //   heading: 'Successfully indexed post',
+      //   message: messages.indexPostSuccess,
+      //   variant: 'success'
+      // }))
   }
 
   showEditForm = (event) => {
@@ -87,15 +87,11 @@ class IndexPosts extends Component {
       }))
   }
 
+  goBack = event => {
+    this.setState({ formDisplay: false, formId: null })
+  }
+
   render () {
-    const authenticatedOptions = (
-      <div className="ml-auto authnav" expand="md">
-        <Link to="/create-post" className="authnavlinks" style={{ textDecoration: 'none', padding: '2%' }}>post</Link>
-        <Link to="/index-posts" className="authnavlinks" style={{ textDecoration: 'none', padding: '2%' }}>myPosts</Link>
-        <Link to="/index-posts-all" className="authnavlinks" style={{ textDecoration: 'none', padding: '2%' }}>devFeed</Link>
-        <Link to="/index-users" className="authnavlinks" style={{ textDecoration: 'none', padding: '2%' }}>devHeads</Link>
-      </div>
-    )
     const { posts, formDisplay, formBody, formId } = this.state
 
     let postsJsx = ''
@@ -130,6 +126,12 @@ class IndexPosts extends Component {
           >
               Update
           </Button>
+          <Button
+            variant="secondary"
+            className="button"
+            type="button"
+            onClick={this.goBack}
+          >Go Back</Button>
         </Form>
       )
     } else {
@@ -165,7 +167,6 @@ class IndexPosts extends Component {
 
     return (
       <div className="row d-flex">
-        {authenticatedOptions}
         <div className="col-sm-10 col-md-8 mx-auto mt-5 feedbox">
           <p className="ptitles">Your Wall</p>
           {postsJsx}

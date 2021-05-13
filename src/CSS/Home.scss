@@ -68,6 +68,12 @@ $secondary: yellow;
   font-size: 5vw;
 }
 
+.logo-subhead {
+  line-height: 1px;
+  font-size: 30%;
+  margin-left: 21%;
+}
+
 .navbar {
   font-family: 'Roboto Mono', monospace;
   font-size: 2vw;
@@ -78,6 +84,14 @@ $secondary: yellow;
   font-size: 2vw;
   display: flex;
   justify-content: space-between;
+}
+
+.block-nav {
+  display: block;
+  position: absolute;
+  right: 1.5rem;
+  top: 0;
+  text-align: right;
 }
 
 .authnavlinks {
