@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { withRouter, Link } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 
 import { changePassword } from '../../api/auth'
 import messages from '../AutoDismissAlert/messages'
@@ -34,7 +34,7 @@ class ChangePassword extends Component {
         message: messages.changePasswordSuccess,
         variant: 'success'
       }))
-      .then(() => history.push('/index-posts-all'))
+      .then(() => history.push('/create-post'))
       .catch(error => {
         this.setState({ oldPassword: '', newPassword: '' })
         msgAlert({
@@ -46,43 +46,34 @@ class ChangePassword extends Component {
   }
 
   render () {
-    const authenticatedOptions = (
-      <div className="ml-auto authnav" expand="md">
-        <Link to="/create-post" className="authnavlinks" style={{ textDecoration: 'none', padding: '2%' }}>post</Link>
-        <Link to="/index-posts" className="authnavlinks" style={{ textDecoration: 'none', padding: '2%' }}>myPosts</Link>
-        <Link to="/index-posts-all" className="authnavlinks" style={{ textDecoration: 'none', padding: '2%' }}>devFeed</Link>
-        <Link to="/index-users" className="authnavlinks" style={{ textDecoration: 'none', padding: '2%' }}>devHeads</Link>
-      </div>
-    )
     const { oldPassword, newPassword } = this.state
 
     return (
       <div className="row form">
-        {authenticatedOptions}
         <div className="col-sm-10 col-md-8 mx-auto mt-5">
-          <h3>Change Password</h3>
+          <h3>changePassword</h3>
           <Form onSubmit={this.onChangePassword}>
             <Form.Group controlId="oldPassword">
-              <Form.Label>Old password</Form.Label>
+              <Form.Label>oldPassword</Form.Label>
               <Form.Control
                 required
                 className="field"
                 name="oldPassword"
                 value={oldPassword}
                 type="password"
-                placeholder="Old Password"
+                placeholder="oldPassword"
                 onChange={this.handleChange}
               />
             </Form.Group>
             <Form.Group controlId="newPassword">
-              <Form.Label>New Password</Form.Label>
+              <Form.Label>newPassword</Form.Label>
               <Form.Control
                 required
                 className="field"
                 name="newPassword"
                 value={newPassword}
                 type="password"
-                placeholder="New Password"
+                placeholder="newPassword"
                 onChange={this.handleChange}
               />
             </Form.Group>
@@ -90,7 +81,7 @@ class ChangePassword extends Component {
               variant="primary"
               type="submit"
             >
-              Submit
+              submit
             </Button>
           </Form>
         </div>

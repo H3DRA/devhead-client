@@ -69,7 +69,7 @@ class IndexAllPosts extends Component {
     return (
       <div className="row d-flex">
         <div className="col-sm-10 col-md-8 mx-auto mt-5 feedbox">
-          <p className="ptitles">Public Wall</p>
+          <p className="ptitles">publicWall</p>
           {postsJsx}
         </div>
       </div>
