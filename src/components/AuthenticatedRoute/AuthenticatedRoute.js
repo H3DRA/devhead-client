@@ -20,7 +20,7 @@ const AuthenticatedRoute = ({
     return <Route {...rest} render={props =>
     // QUICK NOTE: I changed the first seen page to "sign-up," in order to
     // streamline UX
-      user ? <Component {...props} /> : <Redirect to='/sign-up' />
+      user ? <Component {...props} /> : <Redirect to='/' />
     } />
   }
 }

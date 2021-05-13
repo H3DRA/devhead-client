@@ -172,7 +172,7 @@ class IndexPosts extends Component {
     return (
       <div className="row d-flex">
         <div className="col-sm-10 col-md-8 mx-auto mt-5 feedbox">
-          <p className="ptitles">Your Wall</p>
+          <p className="ptitles">yourWall</p>
           {postsJsx}
         </div>
       </div>
