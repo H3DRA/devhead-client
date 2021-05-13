@@ -77,7 +77,7 @@ class IndexUsers extends Component {
           <div>
             <p className="ptitles">{posts[0].ownerEmail}`s wall</p>
             <ul className="list">
-              {posts.map(post => (
+              {posts.slice(0).reverse().map(post => (
                 <li key={post._id} className="linebetween">
                   {post.body}
                 </li>
@@ -97,7 +97,7 @@ class IndexUsers extends Component {
         <div>
           <p className="ptitles">moreDevs</p>
           <ul className="list">
-            {users.map(user => (
+            {users.slice(0).reverse().map(user => (
               <li key={user._id} className="linebetween">
                 <a
                   href="#"
