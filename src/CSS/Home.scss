@@ -10,11 +10,13 @@ $secondary: yellow;
   font-family: 'Roboto Mono', monospace;
 }
 
+// Styles the exterior fonts on the forms
 .form {
   font-family: 'Roboto Mono', monospace;
   color: white;
 }
 
+// customized the bootstrap form fields (transparencies etc)
 .field {
   border: none;
   background: transparent;
@@ -22,16 +24,41 @@ $secondary: yellow;
   color: white;
 }
 
+// removed all the borders from the buttons
 .button {
   border: none;
+  margin: 2%;
 }
 
+// Used this to remove bullet points in all lists
+.list {
+    list-style-type: none;
+}
+
+// I switched header tags to p tags for more freedom with the page headers
+.ptitles {
+  font-size: 48px;
+}
+
+// Styles the main boxes where various lists are indexed
 .feedbox {
-  border: dotted white 5px;
-  padding: 50%;
-  list-style-type: none;
+  border: dashed white 5px;
+  border-radius: 30px;
+  align-content: center;
+  padding: 5%;
+  font-family: 'Roboto Mono', monospace;
+  color: white;
+  background-color: rgba(0, 0, 0, .2);
+  margin: auto;
 }
 
+// The line between posts or listed elements
+.linebetween {
+  border-bottom: 3px dashed white;
+  padding: 5px;
+}
+
+// class selector SPECIFICALLY for logo
 .logo {
   font-family: 'Recursive', sans-serif;
   font-size: 5vw;

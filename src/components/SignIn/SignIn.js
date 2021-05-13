@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { withRouter } from 'react-router-dom'
+import { withRouter, Link } from 'react-router-dom'
 
 import { signIn } from '../../api/auth'
 import messages from '../AutoDismissAlert/messages'
@@ -33,7 +33,9 @@ class SignIn extends Component {
         message: messages.signInSuccess,
         variant: 'success'
       }))
-      .then(() => history.push('/'))
+      // hey yall, I switched the route so that upon sign-in, the user is directed to the
+      // post creation page
+      .then(() => history.push('/create-post'))
       .catch(error => {
         this.setState({ email: '', password: '' })
         msgAlert({
@@ -84,6 +86,14 @@ class SignIn extends Component {
               submit
             </Button>
           </Form>
+          <br/>
+          <p>Need to sign up? Click to <span>
+            <Link to="/sign-up"
+              className="authnavlinks"
+              style={{ textDecoration: 'none', color: 'rgb(0, 255, 177)' }}>
+              create an account</Link>
+          </span>!
+          </p>
         </div>
       </div>
     )

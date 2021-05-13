@@ -5,34 +5,40 @@ import '../../CSS/Home.scss'
 
 const authenticatedOptions = (
   <Fragment>
-    <Nav.Link href="#change-password">changePassword</Nav.Link>
-    <Nav.Link href="#sign-out">signOut</Nav.Link>
+    <Nav.Link href="#change-password" style={{ fontSize: '25px' }}>changePassword</Nav.Link>
+    <Nav.Link href="#sign-out" style={{ fontSize: '25px' }}>signOut</Nav.Link>
   </Fragment>
 )
 
+// With the addition of the sign-up/sign-in notes on the front page auth forms,
+// I removed the links to improve UX
 const unauthenticatedOptions = (
   <Fragment>
-    <Nav.Link href="#sign-up">signUp</Nav.Link>
-    <Nav.Link href="#sign-in">signIn</Nav.Link>
+    <Nav.Link href="#sign-up"> </Nav.Link>
+    <Nav.Link href="#sign-in"> </Nav.Link>
   </Fragment>
 )
 
-const alwaysOptions = (
-  <Fragment>
-    <Nav.Link href="#/">home</Nav.Link>
-  </Fragment>
-)
+// I blocked out the home link because the create page is more appropriate as
+// the first page seen upon sign in. There is no need to visit the home page anymore.
+// Before, the home page housed the secondary navigation links, but now those links
+// are on the page of every component.
+
+// const alwaysOptions = (
+//   <Fragment>
+//     <Nav.Link href="#/">home</Nav.Link>
+//   </Fragment>
+// )
 
 const Header = ({ user }) => (
   <Navbar bg="transparent" variant="dark" expand="md" className="home navbar">
-    <Navbar.Brand href="#" className="logo">
+    <Navbar.Brand href="#index-posts-all" className="logo">
       {'{dH}'}
     </Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="ml-auto">
-        { user && <span className="navbar-text mr-2">hello {user.email}</span>}
-        { alwaysOptions }
+        { user && <span className="navbar-text mr-2" style={{ fontSize: '25px', color: 'rgba(0, 255, 177, 100)' }}>hello {user.email}</span>}
         { user ? authenticatedOptions : unauthenticatedOptions }
       </Nav>
     </Navbar.Collapse>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { indexPosts, deletePost, updatePost } from '../../api/posts'
-import { withRouter } from 'react-router-dom'
+import { withRouter, Link } from 'react-router-dom'
 import messages from '../AutoDismissAlert/messages'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
@@ -88,6 +88,14 @@ class IndexPosts extends Component {
   }
 
   render () {
+    const authenticatedOptions = (
+      <div className="ml-auto authnav" expand="md">
+        <Link to="/create-post" className="authnavlinks" style={{ textDecoration: 'none', padding: '2%' }}>post</Link>
+        <Link to="/index-posts" className="authnavlinks" style={{ textDecoration: 'none', padding: '2%' }}>myPosts</Link>
+        <Link to="/index-posts-all" className="authnavlinks" style={{ textDecoration: 'none', padding: '2%' }}>devFeed</Link>
+        <Link to="/index-users" className="authnavlinks" style={{ textDecoration: 'none', padding: '2%' }}>devHeads</Link>
+      </div>
+    )
     const { posts, formDisplay, formBody, formId } = this.state
 
     let postsJsx = ''
@@ -116,6 +124,7 @@ class IndexPosts extends Component {
             />
           </Form.Group>
           <Button
+            className="button"
             variant="primary"
             type="submit"
           >
@@ -125,12 +134,14 @@ class IndexPosts extends Component {
       )
     } else {
       postsJsx = (
-        <ul>
+        <ul className="list">
           {posts.map(post => (
-            <li key={post._id}>
+            <li key={post._id} className="linebetween">
               {post.body}
+              <br />
               <Button
                 variant="primary"
+                className="button"
                 type="button"
                 onClick={this.postDelete}
                 data-id={post._id}
@@ -138,6 +149,7 @@ class IndexPosts extends Component {
                 Delete
               </Button>
               <Button
+                className="button"
                 variant="secondary"
                 type="button"
                 onClick={this.showEditForm}
@@ -152,9 +164,10 @@ class IndexPosts extends Component {
     }
 
     return (
-      <div className="row ">
-        <div className="col-sm-10 col-md-8 mx-auto mt-5">
-          <h3>Your Wall</h3>
+      <div className="row d-flex">
+        {authenticatedOptions}
+        <div className="col-sm-10 col-md-8 mx-auto mt-5 feedbox">
+          <p className="ptitles">Your Wall</p>
           {postsJsx}
         </div>
       </div>

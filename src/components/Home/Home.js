@@ -1,10 +1,10 @@
 import React, { Fragment } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import '../../CSS/Home.scss'
 
 const unauthenticatedOptions = (
   <div>
-    <h1 className="welcome">devHead</h1>
+    <h1 className="welcome">  </h1>
   </div>
 )
 
@@ -23,4 +23,4 @@ const Home = ({ user }) => (
   </Fragment>
 )
 
-export default Home
+export default withRouter(Home)

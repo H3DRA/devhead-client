@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { indexAllPosts } from '../../api/posts'
 import messages from '../AutoDismissAlert/messages'
+import { Link } from 'react-router-dom'
 
 // similar to IndexPosts(user) except it'll show any post created by any user
 class IndexAllPosts extends Component {
@@ -33,6 +34,14 @@ class IndexAllPosts extends Component {
   }
 
   render () {
+    const authenticatedOptions = (
+      <div className="ml-auto authnav" expand="md">
+        <Link to="/create-post" className="authnavlinks" style={{ textDecoration: 'none', padding: '2%' }}>post</Link>
+        <Link to="/index-posts" className="authnavlinks" style={{ textDecoration: 'none', padding: '2%' }}>myPosts</Link>
+        <Link to="/index-posts-all" className="authnavlinks" style={{ textDecoration: 'none', padding: '2%' }}>devFeed</Link>
+        <Link to="/index-users" className="authnavlinks" style={{ textDecoration: 'none', padding: '2%' }}>devHeads</Link>
+      </div>
+    )
     const { posts } = this.state
 
     let postsJsx = ''
@@ -47,9 +56,9 @@ class IndexAllPosts extends Component {
       )
     } else {
       postsJsx = (
-        <ul>
+        <ul className="list">
           {posts.map(post => (
-            <li key={post._id}>
+            <li key={post._id} className="linebetween">
               {post.body}
             </li>
           ))}
@@ -58,9 +67,10 @@ class IndexAllPosts extends Component {
     }
 
     return (
-      <div className="row">
-        <div className="col-sm-10 col-md-8 mx-auto mt-5">
-          <h3>Public Wall</h3>
+      <div className="row d-flex">
+        {authenticatedOptions}
+        <div className="col-sm-10 col-md-8 mx-auto mt-5 feedbox">
+          <p className="ptitles">Public Wall</p>
           {postsJsx}
         </div>
       </div>

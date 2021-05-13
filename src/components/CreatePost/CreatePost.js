@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
-import { withRouter } from 'react-router-dom'
+import { withRouter, Link } from 'react-router-dom'
 import { createPost } from '../../api/posts'
 import messages from '../AutoDismissAlert/messages'
 
@@ -41,12 +41,21 @@ class CreatePost extends Component {
   }
 
   render () {
+    const authenticatedOptions = (
+      <div className="ml-auto authnav" expand="md">
+        <Link to="/create-post" className="authnavlinks" style={{ textDecoration: 'none', padding: '2%' }}>post</Link>
+        <Link to="/index-posts" className="authnavlinks" style={{ textDecoration: 'none', padding: '2%' }}>myPosts</Link>
+        <Link to="/index-posts-all" className="authnavlinks" style={{ textDecoration: 'none', padding: '2%' }}>devFeed</Link>
+        <Link to="/index-users" className="authnavlinks" style={{ textDecoration: 'none', padding: '2%' }}>devHeads</Link>
+      </div>
+    )
     const { body } = this.state
 
     return (
       <div className="row form">
+        {authenticatedOptions}
         <div className="col-sm-10 col-md-8 mx-auto mt-5">
-          <h3>createPost</h3>
+          <p className="ptitles">createPost</p>
           <Form onSubmit={this.onCreatePost}>
             <Form.Group controlId="body">
               <Form.Control
@@ -64,7 +73,7 @@ class CreatePost extends Component {
               variant="primary"
               type="submit"
             >
-              rost
+              post
             </Button>
           </Form>
         </div>

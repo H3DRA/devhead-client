@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { withRouter } from 'react-router-dom'
+import { withRouter, Link } from 'react-router-dom'
 
 import { signUp, signIn } from '../../api/auth'
 import messages from '../AutoDismissAlert/messages'
@@ -98,6 +98,14 @@ class SignUp extends Component {
               submit
             </Button>
           </Form>
+          <br/>
+          <p>Already signed up? <span>
+            <Link to="/sign-in"
+              className="authnavlinks"
+              style={{ textDecoration: 'none', color: 'rgb(0, 255, 177)' }}>
+              sign in</Link>
+          </span> here!
+          </p>
         </div>
       </div>
     )
