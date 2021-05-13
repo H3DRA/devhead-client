@@ -80,6 +80,11 @@ class IndexUsers extends Component {
               {posts.slice(0).reverse().map(post => (
                 <li key={post._id} className="linebetween">
                   {post.body}
+                  <div className="timestamp">
+                    {(new Date(post.createdAt)).toDateString()}
+                    <span> </span>
+                    {(new Date(post.createdAt)).toLocaleString('en-US', { hour: 'numeric', hour12: true, minute: 'numeric' })}
+                  </div>
                 </li>
               ))}
               <Button
