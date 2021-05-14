@@ -39,9 +39,9 @@ export const signOut = user => {
 }
 
 export const changePassword = (passwords, user) => {
-  console.log(typeof passwords.oldPassword)
-  console.log(typeof passwords.newPassword)
-  console.log(typeof user.token)
+  // console.log(typeof passwords.oldPassword)
+  // console.log(typeof passwords.newPassword)
+  // console.log(typeof user.token)
   return axios({
     url: apiUrl + '/change-password',
     method: 'PATCH',

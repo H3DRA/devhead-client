@@ -24,11 +24,11 @@ class CreatePost extends Component {
     const { user, msgAlert, history } = this.props
 
     createPost(this.state, user)
-      .then(() => msgAlert({
-        heading: 'Create Post Success',
-        message: messages.createPostSuccess,
-        variant: 'success'
-      }))
+      // .then(() => msgAlert({
+      //   heading: 'Create Post Success',
+      //   message: messages.createPostSuccess,
+      //   variant: 'success'
+      // }))
       .then(() => history.push('/index-posts'))
       .catch(error => {
         this.setState({ body: '' })

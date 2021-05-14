@@ -12,7 +12,7 @@ export default {
   deletePostFailure: 'Post delete failed.',
   updatePostSuccess: 'Post updated successfully!',
   updatePostFailure: 'Post update failed.',
-  indexPostSuccess: 'Posts indexed successfully',
+  indexPostSuccess: 'You are now viewing your posts!',
   indexPostFailure: 'Post failed to display.',
   indexAllSuccess: 'You are now viewing all posts!',
   indexAllFailure: 'Failed to display all posts',

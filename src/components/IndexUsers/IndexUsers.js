@@ -17,7 +17,7 @@ class IndexUsers extends Component {
     indexUsers(user)
       .then(res => this.setState({ users: res.data.users }))
       .then(() => msgAlert({
-        heading: 'Successfully indexed users',
+        heading: 'Success!',
         message: messages.indexUsersSuccess,
         variant: 'success'
       }))

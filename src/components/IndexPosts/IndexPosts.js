@@ -27,11 +27,11 @@ class IndexPosts extends Component {
         message: messages.indexPostFailure,
         variant: 'danger'
       }))
-      // .then(() => msgAlert({
-      //   heading: 'Successfully indexed post',
-      //   message: messages.indexPostSuccess,
-      //   variant: 'success'
-      // }))
+      .then(() => msgAlert({
+        heading: 'Success!',
+        message: messages.indexPostSuccess,
+        variant: 'success'
+      }))
   }
 
   showEditForm = (event) => {
@@ -55,11 +55,11 @@ class IndexPosts extends Component {
         formBody: '',
         formDisplay: false
       }))
-      .then(() => msgAlert({
-        heading: 'Successfully updated post',
-        message: messages.updatePostSuccess,
-        variant: 'success'
-      }))
+      // .then(() => msgAlert({
+      //   heading: 'Success!',
+      //   message: messages.updatePostSuccess,
+      //   variant: 'success'
+      // }))
       .then(() => history.push('/'))
       .then(() => history.push('/index-posts'))
       .catch(error => msgAlert({
@@ -73,11 +73,11 @@ class IndexPosts extends Component {
     const id = event.target.getAttribute('data-id')
     const { user, msgAlert, history } = this.props
     deletePost(user, id)
-      .then(() => msgAlert({
-        heading: 'Successfully deleted post.',
-        message: messages.deletePostSuccess,
-        variant: 'success'
-      }))
+      // .then(() => msgAlert({
+      //   heading: 'Success!.',
+      //   message: messages.deletePostSuccess,
+      //   variant: 'success'
+      // }))
       .then(() => history.push('/'))
       .then(() => history.push('/index-posts'))
       .catch(error => msgAlert({
