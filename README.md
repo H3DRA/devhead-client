@@ -1,7 +1,7 @@
 # devHead
 
 ## Description
-This developer-focused social-media application allows the user to mangage a list of posts. They can create new post entries, read their posts, update their pre-existing posts, and delete their posts, read other people's posts, and view a list of other users.
+This developer-focused social-media application allows the user to manage a list of posts. They can create new post entries, read their posts, update their pre-existing posts, and delete their posts, read other people's posts, and view a list of other users.
 
 ## Planning Story
 Reviewed project prompts and narrowed it down to a social media site, blog, and picture site. After brainstorming target audiences decided to focus on building a platform for software developers where they can post their projects, questions, and frustrations. At this point the project is a social media site with plans to implement more blog-like features and ability to upload pictures at a later date.
@@ -44,3 +44,5 @@ Reviewed project prompts and narrowed it down to a social media site, blog, and 
 - Make client more mobile-friendly
 - Add ability to upload pictures
 - Add blog feature
+- Add ability to like posts
+- Add ability to follow users
