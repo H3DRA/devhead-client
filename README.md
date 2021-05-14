@@ -30,3 +30,12 @@ This developer-focused social-media application allows the user to mangage a lis
 ## Wireframes
 
 ![lowFidWireframeDevHeadJPG](https://media.git.generalassemb.ly/user/35033/files/d6eace80-b173-11eb-9cc3-f7ff0b001bb4)
+
+## Problem-solving process and strategy
+- Utlized mob programming
+- Would troubleshoot problems together through discussion, trial & error, and research via Google, stackoverflow, etc.
+- If the team couldn't find the answer, would seek help from instructors by submitting an issue request
+
+## Unsolved Problems
+- Add more dynamic messaging on successful CRUD actions
+- Make client more mobile-friendly
