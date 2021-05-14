@@ -19,7 +19,7 @@ class IndexAllPosts extends Component {
     indexAllPosts(user)
       .then(res => this.setState({ posts: res.data.posts }))
       .then(() => msgAlert({
-        heading: 'Successfully indexed all posts',
+        heading: 'Success!',
         message: messages.indexAllSuccess,
         variant: 'success'
       }))
