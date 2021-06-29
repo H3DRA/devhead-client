@@ -6,6 +6,8 @@ This developer-focused social-media application allows the user to manage a list
 ## Planning Story
 Reviewed project prompts and narrowed it down to a social media site, blog, and picture site. After brainstorming target audiences decided to focus on building a platform for software developers where they can post their projects, questions, and frustrations. At this point the project is a social media site with plans to implement more blog-like features and ability to upload pictures at a later date.
 
+Utilized [Trello](https://trello.com/b/BnehIEwo/devhead) to define clear goals and manage our daily workflow.
+
 ## Important Links
 - API Repo: [view here](https://github.com/H3DRA/devhead-api)
 - Deployed API: [view here](https://ancient-wildwood-16167.herokuapp.com)
